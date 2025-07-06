@@ -220,6 +220,17 @@ SELECT COUNT(*) AS null_last_name FROM patients WHERE last_name IS NULL;
 
 📋 **ผลลัพธ์ (สรุป):ไม่มีนามสกุลข้อมูล Null**
 
+
+**✅ แสดงตัวอย่างข้อมูล 5 แถวแรก เพื่อดูข้อมูลเบื้องต้น**
+```sql
+SELECT TOP 5 * FROM patients;
+SELECT TOP 5 * FROM doctors;
+SELECT TOP 5 * FROM appointments;
+SELECT TOP 5 * FROM treatments;
+SELECT TOP 5 * FROM billing;
+```
+
+
 ### 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
 ```sql
 SELECT first_name, last_name, specialization, years_experience
