@@ -157,18 +157,32 @@ EXEC sp_columns patients;
 ```sql
 SELECT COUNT(*) AS total_patients FROM patients;
 ```
+**ตัวอย่างผลลัพธ์:**
+📋 **ผลลัพธ์ (นับจำนวนข้อมูลในตาราง):**
+
+| 🔢 Metric       | 📌 Value |
+|------------------|---------|
+| total_patients   | 50      |
+
 ```sql
 SELECT COUNT(*) AS total_doctors FROM doctors;
 ```
+**ตัวอย่างผลลัพธ์:**
+
 ```sql
 SELECT COUNT(*) AS total_appointments FROM appointments;
 ```
+**ตัวอย่างผลลัพธ์:**
+
 ```sql
 SELECT COUNT(*) AS total_treatments FROM treatments;
 ```
+**ตัวอย่างผลลัพธ์:**
+
 ```sql
 SELECT COUNT(*) AS total_billing FROM billing;
 ```
+**ตัวอย่างผลลัพธ์:**
 
 
 ### 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
