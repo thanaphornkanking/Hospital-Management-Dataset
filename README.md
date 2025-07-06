@@ -161,6 +161,9 @@ SELECT COUNT(*) AS total_patients FROM patients;
 
 | total_patients |
 |50 |
+| total_patients      | |                              
+|-----------------------|---------------|
+| 50             |    | 
 
 ```sql
 SELECT COUNT(*) AS total_doctors FROM doctors;
