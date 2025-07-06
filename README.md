@@ -154,7 +154,7 @@ EXEC sp_columns patients;
 | email                 | nvarchar      | อีเมลผู้ป่วย                                
 ```
 
-####
+
 ✅**นับจำนวนข้อมูลในแต่ละตาราง:**
 ```sql
 SELECT COUNT(*) AS total_patients FROM patients;
@@ -201,6 +201,24 @@ SELECT COUNT(*) AS total_billing FROM billing;
 |-----------------------|
 | 200             |
 
+**✅ ตรวจสอบ Null (Data Quality Check)**
+```sql
+SELECT COUNT(*) AS null_first_name FROM patients WHERE first_name IS NULL;
+```
+| null_first_name     |                              
+|-----------------------|
+| 0             |
+
+📋 **ผลลัพธ์ (สรุป):ไม่มีชื่อข้อมูล Null**
+
+```sql
+SELECT COUNT(*) AS null_last_name FROM patients WHERE last_name IS NULL;
+```
+| null_last_name     |                              
+|-----------------------|
+| 0             |
+
+📋 **ผลลัพธ์ (สรุป):ไม่มีนามสกุลข้อมูล Null**
 
 ### 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
 ```sql
