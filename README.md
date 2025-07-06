@@ -133,7 +133,7 @@ SELECT TOP 5 * FROM patients;
 
 -- ดูข้อมูลหมอทั้งหมด
 SELECT * FROM doctors;
-
+```
 
 -- 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
 SELECT first_name, last_name, specialization, years_experience
