@@ -154,6 +154,23 @@ EXEC sp_columns patients;
 | insurance_number      | nvarchar      | เลขกรมธรรม์ประกัน                          
 | email                 | nvarchar      | อีเมลผู้ป่วย                                
 ```
+**นับจำนวนข้อมูลในแต่ละตาราง:**
+```sql
+SELECT COUNT(*) AS total_patients FROM patients;
+```
+```sql
+SELECT COUNT(*) AS total_doctors FROM doctors;
+```
+```sql
+SELECT COUNT(*) AS total_appointments FROM appointments;
+```
+```sql
+SELECT COUNT(*) AS total_treatments FROM treatments;
+```
+```sql
+SELECT COUNT(*) AS total_billing FROM billing;
+```
+
 
 ### 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
 ```sql
