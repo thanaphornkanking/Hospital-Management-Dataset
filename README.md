@@ -144,6 +144,25 @@ FROM doctors
 WHERE years_experience > 5
 ORDER BY years_experience DESC;
 ```
+**ตัวอย่างผลลัพธ์:**
+
+```text
+first_name | last_name | specialization | years_experience
+----------------------------------------------------------
+David      | Jones     | Pediatrics     | 28
+Sarah      | Taylor    | Dermatology    | 26
+Robert     | Davis     | Oncology       | 26
+Sarah      | Smith     | Pediatrics     | 26
+Jane       | Davis     | Pediatrics     | 24
+Alex       | Davis     | Pediatrics     | 23
+Linda      | Wilson    | Oncology       | 21
+Jane       | Smith     | Pediatrics     | 19
+David      | Taylor    | Dermatology    | 17
+```
+**คำอธิบายผลลัพธ์:**
+
+ผลลัพธ์นี้แสดงรายชื่อแพทย์ที่มี ประสบการณ์มากกว่า 5 ปี พร้อมรายละเอียด ชื่อ-นามสกุล, สาขาความเชี่ยวชาญ และ จำนวนปีประสบการณ์ โดยเรียงจากผู้ที่มีประสบการณ์มากที่สุดลงมา
+ข้อมูลนี้ช่วยให้ผู้บริหารหรือแอดมินโรงพยาบาลสามารถวิเคราะห์ความพร้อมด้านบุคลากรเชี่ยวชาญ วางแผนแบ่งงาน หรือมอบหมายเคสที่เหมาะสมได้
 
 ### 3️⃣ JOIN 3 ตาราง: ชื่อผู้ป่วย, ชื่อหมอ, วันนัด
 ```sql
