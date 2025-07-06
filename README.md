@@ -289,8 +289,23 @@ JOIN patients ON appointments.patient_id = patients.patient_id
 GROUP BY patients.first_name, patients.last_name
 ORDER BY total_appointments DESC;
 ```
+**ตัวอย่างผลลัพธ์:**
 
-###8️⃣ Top 5 ผู้ป่วยที่ไม่มาตามนัดบ่อยที่สุด
+```text
+patient_name   | total_appointments
+-----------------------------------
+Alex Smith     | 15
+Jane Taylor    | 14
+Robert Davis   | 13
+Emily Wilson   | 12
+David Brown    | 12
+```
+**ตัวอย่างผลลัพธ์:**
+
+ผลลัพธ์นี้แสดง ผู้ป่วย 5 อันดับแรกที่มีจำนวนการนัดหมายมากที่สุด พร้อมจำนวนครั้งการนัด (total_appointments)
+ข้อมูลนี้ช่วยให้โรงพยาบาลระบุ กลุ่มผู้ป่วยที่ใช้บริการบ่อย ซึ่งอาจใช้ในการวางแผนการดูแลผู้ป่วยโรคเรื้อรัง, จัดทำโปรแกรมติดตามสุขภาพเฉพาะบุคคล หรือวางแผนทรัพยากรแพทย์และบุคลากร
+
+### 8️⃣ Top 5 ผู้ป่วยที่ไม่มาตามนัดบ่อยที่สุด
 ```sql
 SELECT TOP 5
     patients.first_name + ' ' + patients.last_name AS patient_name,
