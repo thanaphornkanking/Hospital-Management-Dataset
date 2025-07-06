@@ -157,7 +157,7 @@ EXEC sp_columns patients;
 ```sql
 SELECT COUNT(*) AS total_patients FROM patients;
 ```
-📋 **ผลลัพธ์ (สรุป):**
+📋 **ผลลัพธ์ (สรุป):มีข้อมูลจำนวน 50 ตัว**
 
 | total_patients      |                              
 |-----------------------|
@@ -166,7 +166,7 @@ SELECT COUNT(*) AS total_patients FROM patients;
 ```sql
 SELECT COUNT(*) AS total_doctors FROM doctors;
 ```
-📋 **ผลลัพธ์ (สรุป):**
+📋 **ผลลัพธ์ (สรุป):มีข้อมูลจำนวน 10 ตัว**
 
 | total_doctors      |                              
 |-----------------------|
@@ -175,7 +175,7 @@ SELECT COUNT(*) AS total_doctors FROM doctors;
 ```sql
 SELECT COUNT(*) AS total_appointments FROM appointments;
 ```
-📋 **ผลลัพธ์ (สรุป):**
+📋 **ผลลัพธ์ (สรุป):มีข้อมูลจำนวน 200 ตัว**
 
 | total_appointments      |                              
 |-----------------------|
@@ -184,7 +184,7 @@ SELECT COUNT(*) AS total_appointments FROM appointments;
 ```sql
 SELECT COUNT(*) AS total_treatments FROM treatments;
 ```
-📋 **ผลลัพธ์ (สรุป):**
+📋 **ผลลัพธ์ (สรุป):มีข้อมูลจำนวน 200 ตัว**
 
 | total_treatments     |                              
 |-----------------------|
@@ -193,7 +193,7 @@ SELECT COUNT(*) AS total_treatments FROM treatments;
 ```sql
 SELECT COUNT(*) AS total_billing FROM billing;
 ```
-📋 **ผลลัพธ์ (สรุป):**
+📋 **ผลลัพธ์ (สรุป):มีข้อมูลจำนวน 200 ตัว**
 
 | total_billing     |                              
 |-----------------------|
