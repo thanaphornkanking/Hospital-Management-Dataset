@@ -129,6 +129,9 @@
 
 ### 1️⃣ Preview Data
 
+**Description:**
+เริ่มต้นด้วยการสำรวจข้อมูลแต่ละตาราง เพื่อทำความเข้าใจโครงสร้าง คอลัมน์ จำนวนข้อมูล และดูตัวอย่างข้อมูลเบื้องต้น
+
 ```sql
 -- ดูข้อมูลผู้ป่วย 5 แถว
 SELECT TOP 5 * FROM patients;
@@ -136,6 +139,9 @@ SELECT TOP 5 * FROM patients;
 -- ดูข้อมูลหมอทั้งหมด
 SELECT * FROM doctors;
 ```
+-- ✅ ดูโครงสร้างตาราง (Schema / Columns)
+EXEC sp_columns patients;
+
 
 ### 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
 ```sql
