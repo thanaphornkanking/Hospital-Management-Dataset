@@ -126,11 +126,93 @@
 
 ## 💻 ตัวอย่าง SQL Queries
 
-### 1️⃣ Preview Data
-
 ```sql
+-- 1️⃣ Preview Data
 -- ดูข้อมูลผู้ป่วย 5 แถว
 SELECT TOP 5 * FROM patients;
 
 -- ดูข้อมูลหมอทั้งหมด
 SELECT * FROM doctors;
+
+
+-- 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
+SELECT first_name, last_name, specialization, years_experience
+FROM doctors
+WHERE years_experience > 5
+ORDER BY years_experience DESC;
+
+
+-- 3️⃣ JOIN 3 ตาราง: ชื่อผู้ป่วย, ชื่อหมอ, วันนัด
+SELECT 
+    patients.first_name AS patient_name,
+    doctors.first_name AS doctor_name,
+    appointments.appointment_date
+FROM appointments
+JOIN patients ON appointments.patient_id = patients.patient_id
+JOIN doctors ON appointments.doctor_id = doctors.doctor_id
+ORDER BY appointments.appointment_date DESC;
+
+
+-- 4️⃣ สรุปการรักษา: จำนวนครั้งและค่าใช้จ่าย
+SELECT 
+    treatment_type, 
+    COUNT(*) AS treatment_count, 
+    SUM(cost) AS total_cost
+FROM treatments
+GROUP BY treatment_type
+ORDER BY total_cost DESC;
+
+
+-- 5️⃣ รายได้โรงพยาบาลรายเดือน
+SELECT 
+    FORMAT(bill_date, 'yyyy-MM') AS billing_month,
+    SUM(amount) AS total_revenue
+FROM billing
+GROUP BY FORMAT(bill_date, 'yyyy-MM')
+ORDER BY billing_month;
+
+
+-- 6️⃣ รายได้แพทย์แต่ละคน
+SELECT
+    doctors.first_name + ' ' + doctors.last_name AS doctor_name,
+    SUM(billing.amount) AS revenue
+FROM billing
+JOIN treatments ON billing.treatment_id = treatments.treatment_id
+JOIN appointments ON treatments.appointment_id = appointments.appointment_id
+JOIN doctors ON appointments.doctor_id = doctors.doctor_id
+GROUP BY doctors.first_name, doctors.last_name
+ORDER BY revenue DESC;
+
+
+-- 7️⃣ Top 5 ผู้ป่วยที่นัดบ่อยที่สุด
+SELECT TOP 5
+    patients.first_name + ' ' + patients.last_name AS patient_name,
+    COUNT(*) AS total_appointments
+FROM appointments
+JOIN patients ON appointments.patient_id = patients.patient_id
+GROUP BY patients.first_name, patients.last_name
+ORDER BY total_appointments DESC;
+
+
+-- 8️⃣ Top 5 ผู้ป่วยที่ไม่มาตามนัดบ่อยที่สุด
+SELECT TOP 5
+    patients.first_name + ' ' + patients.last_name AS patient_name,
+    COUNT(*) AS missed
+FROM appointments
+JOIN patients ON appointments.patient_id = patients.patient_id
+WHERE status = 'No-show'
+GROUP BY patients.first_name, patients.last_name
+ORDER BY missed DESC;
+
+
+-- 9️⃣ KPI: รายได้ต่อจำนวนการนัดของหมอ
+SELECT 
+    doctors.first_name + ' ' + doctors.last_name AS doctor_name,
+    COUNT(DISTINCT appointments.appointment_id) AS num_appointments,
+    SUM(billing.amount) AS total_revenue
+FROM billing
+JOIN treatments ON billing.treatment_id = treatments.treatment_id
+JOIN appointments ON treatments.appointment_id = appointments.appointment_id
+JOIN doctors ON appointments.doctor_id = doctors.doctor_id
+GROUP BY doctors.first_name, doctors.last_name
+ORDER BY total_revenue DESC;
