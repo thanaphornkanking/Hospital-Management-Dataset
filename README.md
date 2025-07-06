@@ -127,7 +127,7 @@
 ## 💻 ตัวอย่าง SQL Queries
 ---
 
-###1️⃣ Preview Data
+### 1️⃣ Preview Data
 ```sql
 -- 1️⃣ Preview Data
 -- ดูข้อมูลผู้ป่วย 5 แถว
@@ -137,7 +137,7 @@ SELECT TOP 5 * FROM patients;
 SELECT * FROM doctors;
 ```
 
-###2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
+### 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
 ```sql
 SELECT first_name, last_name, specialization, years_experience
 FROM doctors
@@ -145,7 +145,7 @@ WHERE years_experience > 5
 ORDER BY years_experience DESC;
 ```
 
-###3️⃣ JOIN 3 ตาราง: ชื่อผู้ป่วย, ชื่อหมอ, วันนัด
+### 3️⃣ JOIN 3 ตาราง: ชื่อผู้ป่วย, ชื่อหมอ, วันนัด
 ```sql
 SELECT 
     patients.first_name AS patient_name,
@@ -157,7 +157,7 @@ JOIN doctors ON appointments.doctor_id = doctors.doctor_id
 ORDER BY appointments.appointment_date DESC;
 ```
 
-###4️⃣ สรุปการรักษา: จำนวนครั้งและค่าใช้จ่าย
+### 4️⃣ สรุปการรักษา: จำนวนครั้งและค่าใช้จ่าย
 ```sql
 SELECT 
     treatment_type, 
@@ -167,7 +167,7 @@ FROM treatments
 GROUP BY treatment_type
 ORDER BY total_cost DESC;
 ```
-###5️⃣ รายได้โรงพยาบาลรายเดือน
+### 5️⃣ รายได้โรงพยาบาลรายเดือน
 ```sql
 SELECT 
     FORMAT(bill_date, 'yyyy-MM') AS billing_month,
@@ -176,7 +176,7 @@ FROM billing
 GROUP BY FORMAT(bill_date, 'yyyy-MM')
 ORDER BY billing_month;
 ```
-###6️⃣ รายได้แพทย์แต่ละคน
+### 6️⃣ รายได้แพทย์แต่ละคน
 ```sql
 SELECT
     doctors.first_name + ' ' + doctors.last_name AS doctor_name,
@@ -188,7 +188,7 @@ JOIN doctors ON appointments.doctor_id = doctors.doctor_id
 GROUP BY doctors.first_name, doctors.last_name
 ORDER BY revenue DESC;
 ```
-###7️⃣ Top 5 ผู้ป่วยที่นัดบ่อยที่สุด
+### 7️⃣ Top 5 ผู้ป่วยที่นัดบ่อยที่สุด
 ```sql
 SELECT TOP 5
     patients.first_name + ' ' + patients.last_name AS patient_name,
@@ -211,7 +211,7 @@ GROUP BY patients.first_name, patients.last_name
 ORDER BY missed DESC;
 ```
 
-###9️⃣ KPI: รายได้ต่อจำนวนการนัดของหมอ
+### 9️⃣ KPI: รายได้ต่อจำนวนการนัดของหมอ
 ```sql
 SELECT 
     doctors.first_name + ' ' + doctors.last_name AS doctor_name,
