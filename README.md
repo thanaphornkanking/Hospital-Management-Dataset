@@ -329,7 +329,7 @@ patient_name    | missed
 Alex Moore      | 6
 Laura Davis     | 5
 Michael Taylor  | 5
-David Wilson    | 4
+David Wilson    | 5
 Michael Wilson  | 4
 ```
 **คำอธิบายผลลัพธ์:**
