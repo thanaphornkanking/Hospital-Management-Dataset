@@ -156,7 +156,7 @@ EXEC sp_columns patients;
 ```
 
 
-🟢 1.2 นับจำนวนข้อมูลในแต่ละตาราง
+#### 🟢 1.2 นับจำนวนข้อมูลในแต่ละตาราง
 ```sql
 SELECT COUNT(*) AS total_patients FROM patients;
 ```
@@ -202,7 +202,7 @@ SELECT COUNT(*) AS total_billing FROM billing;
 |-----------------------|
 | 200             |
 
-🟢 1.3 ตรวจสอบ Null (Data Quality Check)
+#### 🟢 1.3 ตรวจสอบ Null (Data Quality Check)
 ```sql
 SELECT COUNT(*) AS null_first_name FROM patients WHERE first_name IS NULL;
 ```
@@ -222,7 +222,7 @@ SELECT COUNT(*) AS null_last_name FROM patients WHERE last_name IS NULL;
 📋 **ผลลัพธ์ (สรุป):ไม่มีนามสกุลข้อมูล Null**
 
 
-🟢 1.4 แสดงตัวอย่างข้อมูล 5 แถวแรก
+#### 🟢 1.4 แสดงตัวอย่างข้อมูล 5 แถวแรก
 ```sql
 SELECT TOP 5 * FROM patients;
 SELECT TOP 5 * FROM doctors;
