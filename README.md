@@ -263,6 +263,22 @@ JOIN doctors ON appointments.doctor_id = doctors.doctor_id
 GROUP BY doctors.first_name, doctors.last_name
 ORDER BY revenue DESC;
 ```
+**ตัวอย่างผลลัพธ์:**
+
+```text
+doctor_name    | revenue
+----------------------------
+Sarah Taylor   | 128855.68
+David Jones    | 116098.16
+Robert Davis   | 110653.67
+Jane Smith     | 99418.10
+Alex Davis     | 96224.24
+```
+**ตัวอย่างผลลัพธ์:**
+
+ผลลัพธ์นี้แสดง รายได้รวมของแพทย์แต่ละคน โดยรวมจากยอดบิลการรักษาที่แพทย์รับผิดชอบ เรียงตามรายได้จากมากไปน้อย
+ข้อมูลนี้ช่วยให้โรงพยาบาล วิเคราะห์ผลงานของแพทย์แต่ละคน ใช้กำหนด KPI ประเมินผลงาน จัดสรรโบนัส หรือปรับปรุงกลยุทธ์บริหารทีมแพทย์
+
 ### 7️⃣ Top 5 ผู้ป่วยที่นัดบ่อยที่สุด
 ```sql
 SELECT TOP 5
