@@ -156,6 +156,17 @@ JOIN patients ON appointments.patient_id = patients.patient_id
 JOIN doctors ON appointments.doctor_id = doctors.doctor_id
 ORDER BY appointments.appointment_date DESC;
 ```
+**ตัวอย่างผลลัพธ์:**
+
+```text
+patient_name | doctor_name | appointment_date
+----------------------------------------------
+Alex         | Sarah       | 2023-12-30 00:00:00.000
+Laura        | Jane        | 2023-12-26 00:00:00.000
+David        | Robert      | 2023-12-26 00:00:00.000
+Emily        | Jane        | 2023-12-24 00:00:00.000
+Sarah        | Jane        | 2023-12-20 00:00:00.000
+```
 
 ### 4️⃣ สรุปการรักษา: จำนวนครั้งและค่าใช้จ่าย
 ```sql
