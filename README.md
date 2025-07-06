@@ -159,11 +159,10 @@ SELECT COUNT(*) AS total_patients FROM patients;
 ```
 📋 **ผลลัพธ์ (สรุป):**
 
-| total_patients |
-|50 |
-| total_patients      | |                              
-|-----------------------|---------------|
-| 50             |    | 
+
+| total_patients      |                              
+|-----------------------|
+| 50             |
 
 ```sql
 SELECT COUNT(*) AS total_doctors FROM doctors;
