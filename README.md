@@ -132,9 +132,8 @@
 **Description:**
 เริ่มด้วยการ Preview ข้อมูล เพื่อทำความเข้าใจโครงสร้างและตัวอย่างข้อมูลเบื้องต้นในแต่ละตาราง
 
+**ดูโครงสร้างตาราง (Schema / Columns):**
 ```sql
--- ดูโครงสร้างตาราง (Schema / Columns)
-
 EXEC sp_columns patients;
 ```
 ```text
