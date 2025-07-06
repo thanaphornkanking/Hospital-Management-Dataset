@@ -159,7 +159,6 @@ SELECT COUNT(*) AS total_patients FROM patients;
 ```
 📋 **ผลลัพธ์ (สรุป):**
 
-
 | total_patients      |                              
 |-----------------------|
 | 50             |
