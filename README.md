@@ -135,13 +135,15 @@ SELECT TOP 5 * FROM patients;
 SELECT * FROM doctors;
 ```
 
+```sql
 -- 2️⃣ เลือกหมอที่มีประสบการณ์มากกว่า 5 ปี
 SELECT first_name, last_name, specialization, years_experience
 FROM doctors
 WHERE years_experience > 5
 ORDER BY years_experience DESC;
+```
 
-
+```sql
 -- 3️⃣ JOIN 3 ตาราง: ชื่อผู้ป่วย, ชื่อหมอ, วันนัด
 SELECT 
     patients.first_name AS patient_name,
@@ -151,8 +153,8 @@ FROM appointments
 JOIN patients ON appointments.patient_id = patients.patient_id
 JOIN doctors ON appointments.doctor_id = doctors.doctor_id
 ORDER BY appointments.appointment_date DESC;
-
-
+```
+```sql
 -- 4️⃣ สรุปการรักษา: จำนวนครั้งและค่าใช้จ่าย
 SELECT 
     treatment_type, 
@@ -161,8 +163,8 @@ SELECT
 FROM treatments
 GROUP BY treatment_type
 ORDER BY total_cost DESC;
-
-
+```
+```sql
 -- 5️⃣ รายได้โรงพยาบาลรายเดือน
 SELECT 
     FORMAT(bill_date, 'yyyy-MM') AS billing_month,
@@ -170,8 +172,8 @@ SELECT
 FROM billing
 GROUP BY FORMAT(bill_date, 'yyyy-MM')
 ORDER BY billing_month;
-
-
+```
+```sql
 -- 6️⃣ รายได้แพทย์แต่ละคน
 SELECT
     doctors.first_name + ' ' + doctors.last_name AS doctor_name,
@@ -182,8 +184,8 @@ JOIN appointments ON treatments.appointment_id = appointments.appointment_id
 JOIN doctors ON appointments.doctor_id = doctors.doctor_id
 GROUP BY doctors.first_name, doctors.last_name
 ORDER BY revenue DESC;
-
-
+```
+```sql
 -- 7️⃣ Top 5 ผู้ป่วยที่นัดบ่อยที่สุด
 SELECT TOP 5
     patients.first_name + ' ' + patients.last_name AS patient_name,
@@ -192,8 +194,8 @@ FROM appointments
 JOIN patients ON appointments.patient_id = patients.patient_id
 GROUP BY patients.first_name, patients.last_name
 ORDER BY total_appointments DESC;
-
-
+```
+```sql
 -- 8️⃣ Top 5 ผู้ป่วยที่ไม่มาตามนัดบ่อยที่สุด
 SELECT TOP 5
     patients.first_name + ' ' + patients.last_name AS patient_name,
@@ -203,8 +205,8 @@ JOIN patients ON appointments.patient_id = patients.patient_id
 WHERE status = 'No-show'
 GROUP BY patients.first_name, patients.last_name
 ORDER BY missed DESC;
-
-
+```
+```sql
 -- 9️⃣ KPI: รายได้ต่อจำนวนการนัดของหมอ
 SELECT 
     doctors.first_name + ' ' + doctors.last_name AS doctor_name,
@@ -216,3 +218,4 @@ JOIN appointments ON treatments.appointment_id = appointments.appointment_id
 JOIN doctors ON appointments.doctor_id = doctors.doctor_id
 GROUP BY doctors.first_name, doctors.last_name
 ORDER BY total_revenue DESC;
+```
